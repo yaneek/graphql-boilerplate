@@ -22,3 +22,14 @@ yarn nodemon dist/api.js
 ```
 
 Graphql playground: http://localhost:3000/graphql
+
+Example query:
+```
+{
+  getFooBars {
+    id
+    foo
+    bar
+  }
+}
+```
