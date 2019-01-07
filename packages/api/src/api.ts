@@ -20,7 +20,7 @@ async function bootstrap() {
   const server = express();
   graphqlServer.applyMiddleware({ app: server });
   console.log('Configure Nest factory');
-  const app = await NestFactory.create(APIModule, server, { logger: false });
+  const app = await NestFactory.create(APIModule, server);
 
   useContainer({
     get: (someClass: any) => app.get(someClass),

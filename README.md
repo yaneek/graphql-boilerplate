@@ -40,6 +40,7 @@ Example query:
     id
     foo
     bar
+    type
   }
 }
 ```
