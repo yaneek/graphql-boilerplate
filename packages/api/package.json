@@ -5,11 +5,12 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
+    "start": "yarn nodemon dist/api.js",
     "build": "yarn run clean && yarn run build:ts",
     "build:ts": "tsc",
     "clean": "rimraf ./dist",
     "watch": "yarn run clean && yarn run watch:ts",
-    "watch:ts": "tsc --pretty --watch | tee compile.log"
+    "watch:ts": "tsc --pretty --watch"
   },
   "dependencies": {
     "@nestjs/common": "^5.5.0",
