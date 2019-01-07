@@ -4,6 +4,7 @@ import { Resolver, Query } from 'type-graphql';
 import { Foo } from '../types/Foo.type';
 import { Bar } from '../types/Bar.type';
 import { FooBar } from '../types/FooBar.type';
+import { FooBarType } from '../enums/FooBarType';
 
 @Injectable()
 @Resolver(() => Foo)
@@ -40,7 +41,7 @@ export class FooBarResolver {
   public async getFooBars(): Promise<FooBar[]> {
     return [
       new FooBar({ id: '1', bar: 'bar in foo 1', foo: 'foo 1' }),
-      new FooBar({ id: '2', bar: 'bar in foo 2', foo: 'foo 2' }),
+      new FooBar({ id: '2', bar: 'bar in foo 2', foo: 'foo 2', type: FooBarType.One }),
       new FooBar({ id: '3', bar: 'bar in foo 3', foo: 'foo 3' }),
       // but this works fine because Foobar is base class
       { id: '4', bar: 'plain bar 4', foo: 'plain foo 4' } as FooBar,
